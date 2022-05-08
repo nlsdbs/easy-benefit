@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head> 
+    <title>Easy Benefit BV</title>
+    <link rel="icon" type="image/png" href="img/logo.png" />
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+  </head>
+  <body>
+    <!--Header Elements-->
+    <header>
+      
+      <h1  class="lowuppercase">Easy Benefit BV</h1> 
+    </header>
+    <main>
+      <h1  class="lowuppercase">Easy Benefit BV</h1> 
+     <!--Left Side box-->
+     <div class="split left">
+      <div class="centered">
+          <h1>Welcome to <br>Easy Benefit </h1>
+
+          <p class="rightintext">We help you to complete all your declaration <br>
+            to receive your benefit. <br>
+            If you are eligible to one specific benefit, <br>
+            you can contact us. 
+
+          </p>
+
+          <button onClick="contact();" id="button1" class="button">Contact us</button>
+
+          <h6 class="uppercase"> Request your benefit</h6>
+      </div>
+    </div>
+    <!--Right Side box-->
+
+    <div class="split right">
+      <div class="centered">
+        <h2 class="floatingcube"> Your profile </h2>
+        <img src="img/icon.jpeg" class="image">
+
+        <div class="transparentprofile">
+            <p id="p1">Customer name</p>
+            <p id="p2">Customer age</p>
+            <p id="p3"><b>Customer benefit</b></p>
+        </div>
+      
+        <caption class="caption">We will provide you with more details. <br>
+          You can sign up today.</caption>
+        
+    <!-- Hidden for now
+        <p> You can also get a confirmation pop </p>
+        Name: <input text="Enter your name" id="namei">
+        <button onClick="certif();">Generate Cpop</button>  
+         -->
+
+         <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Koulen&display=swap" rel="stylesheet">
+      </div>
+    </div>
+  </main>
+    <!--End of the website-->
+  </body>
+
+    <script>
+      // Form to check which benefit you are entitled to
+
+    let human = "dear member";
+    let time = "day";
+    let str= `Welcome, Hope you are having a good ${time} ${human}`;
+      alert(str)
+
+    let minor = confirm ('Are you under 18 ?');
+
+      if (minor) { 
+        alert ('You need your legal representative\'s authorisation before starting');
+      }
+      else {
+        alert ('Welcome to Easy Benefit')
+      }
+      if ( minor== true) {
+        alert ('WARNING : On the next question you need to be assisted by your legal representative')
+      }
+    let parent = confirm ('Do you have kids?');
+
+   
+    let name = prompt ("Enter your name?");
+      document.getElementById ("p1").innerHTML = name;
+    let age = prompt ("Enter you age", 20);
+      document.getElementById ("p2").innerHTML = age;
+
+      if (minor== true){
+        document.getElementById ("p3").innerHTML = "Youth Benefit";
+      }
+      if (age >64 || age ==63)
+      {
+        document.getElementById ("p3").innerHTML = "Retirement benefit";
+      }
+      if (parent== true){
+        document.getElementById ("p3").innerHTML = "Parent Benefit";
+      }
+      if (parent== true && minor== true){
+        document.getElementById ("p3").innerHTML = "Special young Parent Benefit";
+      }
+      if (parent== false && minor==false && age<63){
+        document.getElementById ("p3").innerHTML = "No special benefit";
+      }
+
+    function contact() {
+      alert ('Send us an email at info@ellesblockchain.com');
+    }
+    function certif() {
+      let saynamei= document.getElementById(namei).value;
+      let sayp3= document.getElementById(p3).innerHTML;
+      alert (`${saynamei} is entittled to ${sayp3}`);
+    }
+
+    </script>
+
+  
+</html>

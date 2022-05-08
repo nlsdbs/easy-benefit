@@ -1,0 +1,25 @@
+<!DOCTYPE>
+<html>
+<head>
+<title>Questionnaire</title>
+<script language="javascript" type="text/javascript">
+window.onload = function()
+{
+   var messageDiv = document.getElementById('dlgMessage');
+   if ( messageDiv != null && typeof(messageDiv) != "undefined" )
+     messageDiv.innerHTML = window.dialogArguments;
+}
+function confirmClick(args)
+{
+   window.returnValue = args;
+   window.close();
+}
+</script>
+</head>
+<body>
+<div id="dlgMessage">
+</div>
+<input type="button" value="Yes" id="btnYes" onclick="javascript:confirmClick('yes')"/>
+<input type="button" value="No" id="btnNo" onclick="javascript:confirmClick('no');"/>
+</body>
+</html>
